@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="no">
+<head>
+<meta charset="utf-8">
+<title>Familieplan</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- Ikoner for hjemskjerm. Ingen familiedata på denne siden – den sender bare videre til appen. -->
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png?v=1">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png?v=1">
+<link rel="icon" type="image/png" sizes="192x192" href="icon-192.png?v=1">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="apple-mobile-web-app-title" content="Familieplan">
+<meta name="theme-color" content="#121317">
+<style>
+  html,body{margin:0;height:100%;background:#121317;color:#eceef3;font-family:-apple-system,Roboto,sans-serif}
+  .c{height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px}
+  img{width:96px;height:96px;border-radius:22px} a{color:#ffb36b}
+</style>
+</head>
+<body>
+<div class="c"><img src="icon-192.png?v=1" alt=""><div>Åpner Familieplan …</div><a id="lenke" href="#">Trykk her hvis ingenting skjer</a></div>
+<script>
+  // Appens /exec-adresse (krever Google-innlogging og at man står på familielista).
+  var APP = 'https://script.google.com/macros/s/AKfycbzeDhxII9cAWmNEVeas3YVApwWKVVFAXtN-6Jas1AXqYI-B2bormoaeaouzkx_FK4rx/exec';
+  document.getElementById('lenke').href = APP;
+  location.replace(APP);
+</script>
+</body>
+</html>
