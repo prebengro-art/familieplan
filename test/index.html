@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="no">
+<head>
+<meta charset="utf-8">
+<title>Familieplan TEST</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png?v=3">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png?v=3">
+<link rel="icon" type="image/png" sizes="192x192" href="../icon-192.png?v=3">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Familieplan TEST">
+<meta name="theme-color" content="#111111">
+<style>
+  html, body {
+    margin: 0;
+    background: #111;
+  }
+  body {
+    padding-top: env(safe-area-inset-top);
+    background: #111;
+  }
+  iframe {
+    position: fixed;
+    inset: 0;
+    top: env(safe-area-inset-top);
+    width: 100%;
+    height: calc(100% - env(safe-area-inset-top));
+    border: none;
+    background: #111;
+  }
+  #fallback {
+    position: fixed;
+    z-index: 2;
+    left: 12px;
+    right: 12px;
+    bottom: calc(12px + env(safe-area-inset-bottom));
+    margin: 0;
+    padding: 10px 12px;
+    border-radius: 12px;
+    background: #1c1e24;
+    color: #eceef3;
+    font: 14px/1.4 -apple-system, Roboto, sans-serif;
+    text-align: center;
+  }
+  #fallback a {
+    color: #ffb36b;
+    font-weight: 700;
+  }
+</style>
+</head>
+<body>
+<iframe id="app" title="Familieplan TEST" src="https://script.google.com/macros/s/AKfycbzmXIg9i1-iJYQ8Zx4mfSIyBc7g57hFvIuhprhj7pE/dev" allow="camera; clipboard-write"></iframe>
+<div id="fallback" hidden>Fikk ikke lastet appen her. <a href="https://script.google.com/macros/s/AKfycbzmXIg9i1-iJYQ8Zx4mfSIyBc7g57hFvIuhprhj7pE/dev">Åpne appen direkte</a></div>
+<script>
+  var loaded = false;
+  var frame = document.getElementById('app');
+  var fallback = document.getElementById('fallback');
+  frame.addEventListener('load', function () {
+    loaded = true;
+    fallback.hidden = true;
+  });
+  setTimeout(function () {
+    if (!loaded) fallback.hidden = false;
+  }, 12000);
+</script>
+</body>
+</html>
